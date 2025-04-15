@@ -1,0 +1,26 @@
+general.import = [
+  # uncomment the flavour you want below:
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  # "~/.config/alacritty/dawnfox.toml"
+  # "~/.config/alacritty/rose-pine.toml"
+  # "~/.config/alacritty/rose-pine-moon.toml"
+  # "~/.config/alacritty/rose-pine-dawn.toml"
+  "~/.config/alacritty/snazzy.toml"
+]
+
+[window]
+dimensions = { columns = 115, lines = 32 }
+opacity = 0.7
+
+[font]
+normal = { family = "cascadia code" }
+size = 10
+
+[colors.primary]
+foreground = "#e0def4"
+background = "#030011"
+dim_foreground = "#908caa"
+bright_foreground = "#e0def4"
+
+[colors.normal]
+green = "#33FF00"
