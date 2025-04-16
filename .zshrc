@@ -117,8 +117,8 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 
-alias zshconfig="micro ~/.zshrc"
-alias ohmyzsh="micro ~/.oh-my-zsh"
+alias zshconfig="micro $HOME/.zshrc"
+alias ohmyzsh="micro $HOME/.oh-my-zsh"
 alias aliases="micro $ZSH_CUSTOM/aliases.zsh"
 
 # My config
@@ -126,6 +126,7 @@ alias aliases="micro $ZSH_CUSTOM/aliases.zsh"
 export PATH=$PATH:/home/amitush/.spicetify
 export "EDITOR=micro"
 export "MICRO_TRUECOLOR=1"
+export "ZSH_CUSTOM=$HOME/.config/oh-my-zsh/custom"
 
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
