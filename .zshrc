@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -25,11 +25,11 @@ ZSH_THEME="half-life"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -41,7 +41,7 @@ ZSH_THEME="half-life"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -60,10 +60,13 @@ ZSH_THEME="half-life"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS='yyyy-mm-dd'
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -95,42 +98,26 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_IL.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-
-alias zshconfig="micro $HOME/.zshrc"
-alias ohmyzsh="micro $HOME/.oh-my-zsh"
-alias aliases="micro $ZSH_CUSTOM/aliases.zsh"
-
-# My config
+if [[ -n $SSH_CONNECTION ]]; then
+	export EDITOR='nano'
+else
+	export EDITOR='micro'
+fi
 
 export PATH=$PATH:/home/amitush/.spicetify
-export "EDITOR=micro"
-export "MICRO_TRUECOLOR=1"
-export "ZSH_CUSTOM=$HOME/.config/oh-my-zsh/custom"
+export MICRO_TRUECOLOR='1'
+
+alias zshconfig='$EDITOR $HOME/.zshrc'
+alias ohmyzsh='$EDITOR $HOME/.oh-my-zsh'
+alias aliases='$EDITOR $ZSH_CUSTOM/aliases.zsh'
 
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
 zstyle ':omz:plugins:alias-finder' exact yes # disabled by default
 zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
+# pokemon fastfetch
 pokemon-colorscripts --no-title -rn arceus,articuno,azelf,celebi,cobalion,cresselia,darkrai,deoxys,dialga,diancie,entei,giratina,groudon,heatran,ho-oh,hoopa,jirachi,keldeo,kyogre,kyurem,landorus,latias,latios,lugia,manaphy,marshadow,meloetta,mew,mewtwo,moltres,mesprit,necrozma,palkia,phione,raikou,rayquaza,regice,regigigas,regirock,registeel,reshiram,shaymin,solgaleo,suicune,terrakion,thundurus,tornadus,uxie,victini,virizion,volcanion,xerneas,yveltal,zapdos,zekrom,zeraora,zygarde,snorlax,ditto,pikachu,charizard,drampa | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 10 --logo-width 5 --logo -
