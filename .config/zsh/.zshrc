@@ -11,9 +11,15 @@ zstyle ':omz:update' frequency 7
 
 # History
 export HIST_STAMPS='yyyy-mm-dd'
-export HISTFILE=$HOME/.config/zsh/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
+
+# Use XDG dirs for completion and history files
+[ -d "$XDG_STATE_HOME"/zsh ] || mkdir -p "$XDG_STATE_HOME"/zsh
+HISTFILE="$XDG_STATE_HOME"/zsh/history
+[ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
