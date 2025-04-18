@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = 59233615+amitc1612@users.noreply.github.com
+	name = Amit Cohen
+[pull]
+	rebase = false
