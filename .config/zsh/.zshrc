@@ -61,12 +61,12 @@ zstyle ':omz:update' frequency 7
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 HIST_STAMPS='yyyy-mm-dd'
-HISTFILE=~/.zsh_history
+HISTFILE=$HOME/.config/zsh/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/.config/oh-my-zsh
+ZSH_CUSTOM=$HOME/.config/zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/

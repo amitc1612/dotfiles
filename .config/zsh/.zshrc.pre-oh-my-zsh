@@ -1,0 +1,18 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd beep nomatch notify
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/amitush/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Amit's conf
+fastfetch
+export PATH=$PATH:/home/amitush/.spicetify
+alias r1="ollama run deepseek-r1:1.5b"
+alias g3="ollama run gemma3:1b"
