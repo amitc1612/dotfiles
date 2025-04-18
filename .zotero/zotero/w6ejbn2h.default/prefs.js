@@ -9,22 +9,23 @@
 // - modify it via the UI (e.g. via about:config in the browser); or
 // - set it within a user.js file in your profile.
 
-user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1742576740);
-user_pref("app.update.lastUpdateTime.background-update-timer", 1742576740);
-user_pref("app.update.lastUpdateTime.xpi-signature-verification", 1742576740);
+user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1744974014);
+user_pref("app.update.lastUpdateTime.background-update-timer", 1744974014);
+user_pref("app.update.lastUpdateTime.xpi-signature-verification", 1744974014);
 user_pref("bidi.browser.ui", true);
 user_pref("browser.laterrun.bookkeeping.profileCreationTime", 1742576709);
-user_pref("browser.laterrun.bookkeeping.sessionCount", 1);
+user_pref("browser.laterrun.bookkeeping.sessionCount", 6);
 user_pref("browser.laterrun.enabled", true);
 user_pref("browser.policies.applied", true);
 user_pref("browser.startup.homepage_override.buildID", "20240801134912");
 user_pref("browser.startup.homepage_override.mstone", "115.14.0");
 user_pref("browser.theme.toolbar-theme", 0);
-user_pref("extensions.blocklist.pingCountVersion", 0);
+user_pref("extensions.blocklist.pingCountVersion", -1);
 user_pref("extensions.databaseSchema", 35);
-user_pref("extensions.lastAppBuildId", "20241206120730");
-user_pref("extensions.lastAppVersion", "7.0.11");
+user_pref("extensions.lastAppBuildId", "20250316033147");
+user_pref("extensions.lastAppVersion", "7.0.15");
 user_pref("extensions.lastPlatformVersion", "115.14.0");
+user_pref("extensions.pendingOperations", false);
 user_pref("extensions.systemAddonSet", "{\"schema\":1,\"addons\":{}}");
 user_pref("extensions.ui.dictionary.hidden", true);
 user_pref("extensions.ui.extension.hidden", false);
@@ -33,10 +34,13 @@ user_pref("extensions.webextensions.uuids", "{\"better-bibtex@iris-advies.com\":
 user_pref("extensions.zotero.autoRenameFiles.linked", true);
 user_pref("extensions.zotero.baseAttachmentPath", "/home/amitush/Drive/Zotero");
 user_pref("extensions.zotero.dataDir", "/home/amitush/Zotero");
+user_pref("extensions.zotero.export.lastLocale", "en-US");
+user_pref("extensions.zotero.export.lastStyle", "http://www.zotero.org/styles/tisch");
 user_pref("extensions.zotero.firstRun.skipFirefoxProfileAccessCheck", true);
 user_pref("extensions.zotero.firstRun2", false);
+user_pref("extensions.zotero.firstRunGuidanceShown.quickFormat", true);
 user_pref("extensions.zotero.ignoreLegacyDataDir.auto", true);
-user_pref("extensions.zotero.lastSelectedPrefPane", "zotmoov_basic");
+user_pref("extensions.zotero.lastSelectedPrefPane", "zotero-prefpane-cite");
 user_pref("extensions.zotero.lastViewedFolder", "L1");
 user_pref("extensions.zotero.pane.persist", "{\"zotero-reader-sidebar-pane\":{\"collapsed\":\"true\",\"width\":\"240\"},\"zotero-layout-switcher\":{\"orient\":\"horizontal\"},\"zotero-items-splitter\":{\"orient\":\"horizontal\"},\"zotero-item-pane\":{\"width\":\"337\",\"height\":\"205\"},\"zotero-context-splitter\":{\"state\":\"collapsed\"},\"zotero-context-splitter-stacked\":{\"state\":\"collapsed\"}}");
 user_pref("extensions.zotero.panes.abstract.open", true);
@@ -70,10 +74,10 @@ user_pref("extensions.zoteroOpenOfficeIntegration.lastAttemptedVersion", "7.0.1.
 user_pref("extensions.zotmoov.delete_files", true);
 user_pref("extensions.zotmoov.dst_dir", "/home/amitush/Drive/Zotero");
 user_pref("gecko.handlerService.defaultHandlersVersion", 1);
-user_pref("idle.lastDailyNotification", 1742577361);
+user_pref("idle.lastDailyNotification", 1744974149);
 user_pref("intl.accept_languages", "en-US, en");
 user_pref("privacy.purge_trackers.date_in_cookie_database", "0");
-user_pref("privacy.purge_trackers.last_purge", "1742577361720");
+user_pref("privacy.purge_trackers.last_purge", "1744974149247");
 user_pref("security.sandbox.content.tempDirSuffix", "9f6d01c1-1a9d-4618-b362-16f5f2bfbb45");
-user_pref("storage.vacuum.last.index", 0);
+user_pref("storage.vacuum.last.index", 1);
 user_pref("storage.vacuum.last.places.sqlite", 1742577361);
