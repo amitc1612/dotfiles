@@ -56,3 +56,4 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # Pokemon fastfetch
 pokemon-colorscripts --no-title -rn arceus,articuno,azelf,celebi,cobalion,cresselia,darkrai,deoxys,dialga,diancie,entei,giratina,groudon,heatran,ho-oh,hoopa,jirachi,keldeo,kyogre,kyurem,landorus,latias,latios,lugia,manaphy,marshadow,meloetta,mew,mewtwo,moltres,mesprit,necrozma,palkia,phione,raikou,rayquaza,regice,regigigas,regirock,registeel,reshiram,shaymin,solgaleo,suicune,terrakion,thundurus,tornadus,uxie,victini,virizion,volcanion,xerneas,yveltal,zapdos,zekrom,zeraora,zygarde,snorlax,ditto,pikachu,charizard,drampa | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 10 --logo-width 5 --logo -
+fortune /usr/share/fortune/anarchism | cowsay -f tux | lolcat
