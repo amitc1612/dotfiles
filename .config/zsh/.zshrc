@@ -13,18 +13,20 @@ zstyle ':omz:update' frequency 7
 export HIST_STAMPS='yyyy-mm-dd'
 export HISTSIZE=10000
 export SAVEHIST=10000
+setopt appendhistory
 
 # Use XDG dirs for completion and history files
 [ -d "$XDG_STATE_HOME"/zsh ] || mkdir -p "$XDG_STATE_HOME"/zsh
 HISTFILE="$XDG_STATE_HOME"/zsh/history
 [ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
-compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
+# compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
 	# git
+	archlinux
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	fast-syntax-highlighting 
@@ -44,6 +46,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+# Set-up FZF key bindings (CTRL R for fuzzy history finder)
+source <(fzf --zsh)
 
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default
 zstyle ':omz:plugins:alias-finder' longer yes # disabled by default
