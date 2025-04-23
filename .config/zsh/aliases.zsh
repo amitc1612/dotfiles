@@ -9,4 +9,5 @@ alias cat="bat"
 alias mc="micro"
 alias nano="micro"
 alias q="exit"
-alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias doth='git --git-dir=$HOME/.dothypr/ --work-tree=$HOME'
