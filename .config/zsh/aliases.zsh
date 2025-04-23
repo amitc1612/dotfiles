@@ -10,4 +10,4 @@ alias mc="micro"
 alias nano="micro"
 alias q="exit"
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias doth='git --git-dir=$HOME/.dothypr/ --work-tree=$HOME/.dothypr/'
+alias doth='git --git-dir=$HOME/.dothypr/ --work-tree=$HOME/.config/hypr/'
