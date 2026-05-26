@@ -53,7 +53,7 @@ dot checkout
 
 - Hyprland installations:
 ```bash
-yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl
+yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme
 ```
 
 - Enable services:
@@ -65,4 +65,21 @@ sudo systemctl enable --now sddm pipewire wireplumber pipewire-pulse
 ```bash
 mkdir -p ~/walls
 wal -i ~/walls/<your-wallpaper>
+```
+
+- Replace SDDM theme: `sudoedit /etc/sddm.conf`
+```bash
+[General]
+InputMethod=qtvirtualkeyboard
+GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/silent/components/,QT_IM_MODULE=qtvirtualkeyboard
+
+[Theme]
+Current=silent
+```
+
+- Replace GRUB theme
+```bash
+git clone https://github.com/adnksharp/CyberGRUB-2077
+cd CyberGRUB-2077
+sudo $SHELL ./install.sh
 ```
