@@ -1,4 +1,4 @@
-# Fresh install of minimal Arch
+## Fresh install of minimal Arch
 
 - Connect to the Internet:
 ```bash
@@ -28,6 +28,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 - Hyprland installations:
 ```bash
 yay -S --needed hypr kitty sddm swaync pipewire wireplumber xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix
+```
+
+- Enable sddm:
+```bash
+sudo systemctl enable sddm
 ```
 
 - Generate the initial `pywal` cache:
