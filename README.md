@@ -19,15 +19,36 @@ yay -Syu
 
 - Basic installations:
 ```bash
-yay -S --needed vim nano micro bat firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles
+yay -S --needed vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles
+```
 
-# Oh My ZSH
+- Oh My ZSH:
+```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+```
+
+- Add SSH key to Github:
+```bash
+ssh-keygen -t ed25519 -C "your-email-address"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+ssh -T git@github.com # type "yes"
+cat .ssh/id_ed25519.pub
+```
+Add new SSH key here: https://github.com/settings/keys
+
+- Configure git:
+```bash
+alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+mkdir ~/.dotfiles
+git clone --bare git@github.com:amitc1612/dotfiles.git ~/.dotfiles
+dot config --local status.showUntrackedFiles no
+dot checkout
 ```
 
 - Hyprland installations:
