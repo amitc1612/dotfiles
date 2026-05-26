@@ -35,9 +35,9 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZS
 yay -S --needed hypr kitty sddm swaync pipewire wireplumber xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor
 ```
 
-- Enable sddm:
+- Enable services:
 ```bash
-sudo systemctl enable sddm
+sudo systemctl enable --now sddm pipewire wireplumber
 ```
 
 - Generate the initial `pywal` cache:
