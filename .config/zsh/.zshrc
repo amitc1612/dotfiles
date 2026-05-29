@@ -1,6 +1,9 @@
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="half-life"
 
+# pywal16
+(cat ~/.cache/wal/sequences &)
+
 # Auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 zstyle ':omz:update' mode auto      # update automatically without asking
