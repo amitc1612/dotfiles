@@ -11,7 +11,7 @@
     "custom/separator",
     "hyprland/workspaces",
     "custom/separator",
-    "custom/mpris",
+    "custom/music",
     "custom/separator",
     "clock",
     "custom/pomo",
@@ -51,14 +51,11 @@
     "tooltip": false
   },
 
-  "custom/mpris": {
-    "exec": "~/.config/waybar/scripts/mpris.sh",
-    "interval": 2,
+  "custom/music": {
+    "exec": "waybar-module-music",
     "return-type": "json",
-    "max-length": 25,
-    "min-length": 25,
-    "on-click": "playerctl play-pause",
-    "tooltip": false
+    "format": "{}",
+    "on-click": "playerctl play-pause"
   },
 
   "clock": {
