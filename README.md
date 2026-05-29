@@ -53,7 +53,7 @@ dot checkout
 
 - Hyprland installations:
 ```bash
-yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme waybar-module-music-git apple-fonts gwenview
+yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme waybar-module-music-git apple-fonts gwenview wev grim slurp
 
 ```
 
