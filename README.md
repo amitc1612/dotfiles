@@ -19,7 +19,7 @@ yay -Syu
 
 - Basic installations:
 ```bash
-yay -S --needed vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles vlc bluez-utils
+yay -S --needed vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles vlc bluez bluez-utils blueman
 ```
 
 - Oh My ZSH:
@@ -58,7 +58,7 @@ yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitage
 
 - Enable services:
 ```bash
-sudo systemctl enable --now sddm pipewire wireplumber pipewire-pulse
+sudo systemctl enable --now sddm pipewire wireplumber pipewire-pulse bluetooth
 ```
 
 - Generate the initial `pywal` cache:

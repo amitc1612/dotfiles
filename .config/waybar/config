@@ -7,6 +7,8 @@
   "reload_style_on_change": true,
 
   "modules-center": [
+    "custom/pacman",
+    "custom/notification",
     "hyprland/window",
     "custom/separator",
     "hyprland/workspaces",
@@ -18,6 +20,7 @@
     "backlight",
     "custom/memorypie",
     "battery",
+    "bluetooth",
     "tray"
   ],
 
@@ -32,6 +35,23 @@
       "*": [1, 2, 3, 4, 5]
     },
     "tooltip": false
+  },
+
+  "custom/pacman": {
+    "format": "󰅢 {}",
+    "interval": 30,   
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false,
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
   },
 
   "hyprland/window": {
@@ -54,7 +74,7 @@
     "exec": "waybar-module-music",
     "return-type": "json",
     "format": "{}",
-    "max-length": 35,
+    "max-length": 25,
     "on-click": "playerctl play-pause"
   },
 
@@ -77,8 +97,8 @@
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "on-scroll-up": "brightnessctl -d amdgpu_bl1 -e4 -n2 set 5%+",
-    "on-scroll-down": "brightnessctl -d amdgpu_bl1 -e4 -n2 set 5%-",
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-",
     "smooth-scrolling-threshold": 0.2,
     "tooltip": false
   },
@@ -89,6 +109,19 @@
     "return-type": "json",
     "tooltip": false
   },
+
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "BT-off",
+    "format-disabled": "󰂲",
+    "format-connected-battery": "{device_battery_percentage}% 󰂯",
+    "format-alt": "{device_alias} 󰂯",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+    "on-click-right": "blueman-manager",
+  }, 
 
   "battery": {
     "states": {

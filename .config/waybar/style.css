@@ -3,7 +3,7 @@
 
 * {
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   border: none;
   min-height: 0;
@@ -22,12 +22,15 @@ window#waybar {
 }
 
 #workspaces,
+#custom-pacman,
+#custom-notification,
 #window,
 #custom-music,
 #clock,
 #pulseaudio,
 #backlight,
 #custom-memorypie,
+#bluetooth,
 #battery,
 #tray {
   background: rgba(255, 255, 255, 0.14);
@@ -92,12 +95,19 @@ window#waybar {
   padding: 2px 12px;
 }
 
+#custom-notification {
+  padding-right: 14px;
+}
+
 #custom-music:hover,
+#custom-pacman:hover,
+#custom-notification:hover,
 #window:hover,
 #clock:hover,
 #pulseaudio:hover,
 #backlight:hover,
 #custom-memorypie:hover,
+#bluetooth:hover,
 #battery:hover,
 #tray:hover {
   background: rgba(255, 255, 255, 0.2);
