@@ -14,7 +14,6 @@
     "custom/music",
     "custom/separator",
     "clock",
-    "custom/pomo",
     "pulseaudio",
     "backlight",
     "custom/memorypie",
@@ -55,6 +54,7 @@
     "exec": "waybar-module-music",
     "return-type": "json",
     "format": "{}",
+    "max-length": 35,
     "on-click": "playerctl play-pause"
   },
 
@@ -98,18 +98,6 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
-    "tooltip": false
-  },
-
-  "custom/pomo": {
-    "exec": "~/.config/waybar/scripts/pomo.sh",
-    "on-click": "~/.config/waybar/scripts/pomo.sh toggle",
-    "on-click-right": "~/.config/waybar/scripts/pomo.sh stop",
-    "on-scroll-up": "~/.config/waybar/scripts/pomo.sh preset-next",
-    "on-scroll-down": "~/.config/waybar/scripts/pomo.sh preset-prev",
-    "interval": 1,
-    "return-type": "json",
-    "format": "{}",
     "tooltip": false
   },
 

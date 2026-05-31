@@ -23,9 +23,8 @@ window#waybar {
 
 #workspaces,
 #window,
-#custom-mpris,
+#custom-music,
 #clock,
-#custom-pomo,
 #pulseaudio,
 #backlight,
 #custom-memorypie,
@@ -89,14 +88,13 @@ window#waybar {
   min-height: 16px;
 }
 
-#custom-mpris {
+#custom-music {
   padding: 2px 12px;
 }
 
-#custom-mpris:hover,
+#custom-music:hover,
 #window:hover,
 #clock:hover,
-#custom-pomo:hover,
 #pulseaudio:hover,
 #backlight:hover,
 #custom-memorypie:hover,

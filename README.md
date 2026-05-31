@@ -53,7 +53,7 @@ dot checkout
 
 - Hyprland installations:
 ```bash
-yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker cliphist hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme waybar-module-music-git apple-fonts gwenview wev grim slurp awww waypaper gnome-themes-extra gnome-themes-extra-gtk2 adwaita-qt5-git adwaita-qt6-git peaclock
+yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker cliphist hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme waybar-module-music-git apple-fonts gwenview wev grim slurp awww waypaper gnome-themes-extra gnome-themes-extra-gtk2 adwaita-qt5 adwaita-qt6-git peaclock qt5-quickcontrols qt5-quickcontrols2 qt5-declarative qt5-graphicaleffects
 ```
 
 - Enable services:
