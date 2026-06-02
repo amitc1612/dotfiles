@@ -1,5 +1,11 @@
 # Amit's dotfiles
-This guide is meant to be executed from a fresh install of **minimal** Arch linux.
+
+![fastfetch](examples/fastfetch.png)
+![tiles](examples/tiles.png)
+![rofi](examples/rofi.png)
+
+> [!NOTE]
+> This guide is meant to be executed from a fresh install of **minimal** Arch linux.
 
 ### Connect to the Internet:
 ```bash
