@@ -1,12 +1,13 @@
-## Fresh install of minimal Arch
+# Amit's dotfiles
+This guide is meant to be executed from a fresh install of **minimal** Arch linux.
 
-- Connect to the Internet:
+### Connect to the Internet:
 ```bash
 iwctl
 station wlan0 connect "my-network"
 ```
 
-- Install yay:
+### Install yay:
 ```bash
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
@@ -17,12 +18,12 @@ makepkg -si
 yay -Syu
 ```
 
-- Basic installations:
+### Basic installations:
 ```bash
-yay -S --needed vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles vlc bluez bluez-utils blueman
+yay -S --needed vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles vlc bluez bluez-utils blueman cronie
 ```
 
-- Oh My ZSH:
+### Oh My ZSH:
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -32,7 +33,7 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
 ```
 
-- Add SSH key to Github:
+### Add SSH key to Github:
 ```bash
 ssh-keygen -t ed25519 -C "your-email-address"
 eval "$(ssh-agent -s)"
@@ -42,7 +43,7 @@ cat .ssh/id_ed25519.pub
 ```
 Add new SSH key here: https://github.com/settings/keys
 
-- Configure git:
+### Configure git:
 ```bash
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 mkdir ~/.dotfiles
@@ -51,23 +52,22 @@ dot config --local status.showUntrackedFiles no
 dot checkout
 ```
 
-- Hyprland installations:
+### Hyprland installations:
 ```bash
-yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker cliphist hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme waybar-module-music-git apple-fonts gwenview wev grim slurp awww waypaper gnome-themes-extra gnome-themes-extra-gtk2 adwaita-qt5 adwaita-qt6-git peaclock qt5-quickcontrols qt5-quickcontrols2 qt5-declarative qt5-graphicaleffects ttf-cascadia-code
+yay -S --needed hypr kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker cliphist hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme waybar-module-music-git apple-fonts gwenview wev grim slurp awww waypaper gnome-themes-extra gnome-themes-extra-gtk2 adwaita-qt5 adwaita-qt6-git peaclock qt5-quickcontrols qt5-quickcontrols2 qt5-declarative qt5-graphicaleffects ttf-cascadia-code ttf-cascadia-code-nerd
 ```
 
-- Enable services:
+### Enable services:
 ```bash
-sudo systemctl enable --now sddm pipewire wireplumber pipewire-pulse bluetooth
+sudo systemctl enable --now sddm pipewire wireplumber pipewire-pulse bluetooth cronie
 ```
 
-- Generate the initial `pywal` cache:
+### Generate the initial `pywal` cache:
 ```bash
-mkdir -p ~/walls
 wal -i ~/walls/<your-wallpaper>
 ```
 
-- Replace SDDM theme: `sudoedit /etc/sddm.conf`
+### Replace SDDM theme: `sudoedit /etc/sddm.conf`
 ```bash
 [General]
 InputMethod=qtvirtualkeyboard
@@ -77,9 +77,14 @@ GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/silent/components/,QT
 Current=silent
 ```
 
-- Replace GRUB theme
+### Replace GRUB theme:
 ```bash
 git clone https://github.com/adnksharp/CyberGRUB-2077
 cd CyberGRUB-2077
 sudo $SHELL ./install.sh
+```
+
+### Cronjob for randomizing wallpaper every 30 minutes:
+```bash
+(crontab -l 2>/dev/null; echo "*/30 * * * * /home/$USER/.config/hypr/scripts/wallpaper.sh") | crontab -
 ```
