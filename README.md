@@ -26,7 +26,7 @@ yay -Syu
 
 ### Basic installations:
 ```bash
-yay -S --needed vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles vlc bluez bluez-utils blueman cronie termius
+yay -S --needed vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles vlc bluez bluez-utils blueman man-db cronie termius
 ```
 
 ### Oh My ZSH:
