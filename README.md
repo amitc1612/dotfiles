@@ -1,43 +1,10 @@
 # Amit's dotfiles
 
-![fastfetch](examples/fastfetch.png)
-![tiles](examples/tiles.png)
-![rofi](examples/rofi.png)
-
 > [!NOTE]
-> This guide is meant to be executed from a fresh install of **minimal** Arch linux.
+> This guide assumes a fresh install of [CachyOS](https://cachyos.org) with Hyprland and [end-4's dotfiles](https://github.com/end-4/dots-hyprland), which already handle most of the installations.
 
-### Connect to the Internet:
-```bash
-iwctl
-station wlan0 connect "my-network"
-```
-
-### Install yay:
-```bash
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
-# Update your system:
-yay -Syu
-```
-
-### Basic installations:
-```bash
-yay -S --needed vi vim nano micro bat openssh firefox google-chrome tree fastfetch zsh zsh-completions zsh-autosuggestions fzf pokemon-colorscripts-git pipewire wireplumber pipewire-pulse pipewire-alsa sof-firmware alsa-ucm-conf alsa-card-profiles vlc bluez bluez-utils blueman man-db cronie termius unzip
-```
-
-### Oh My ZSH:
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
-```
+> [!IMPORTANT]
+> CachyOS's default shell is fish, so run `bash` first and paste the commands below in there.
 
 ### Add SSH key to Github:
 ```bash
@@ -45,52 +12,43 @@ ssh-keygen -t ed25519 -C "your-email-address"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ssh -T git@github.com # type "yes"
-cat .ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 ```
 Add new SSH key here: https://github.com/settings/keys
 
-### Configure git:
+### Configure the dotfiles bare repo:
 ```bash
 alias dot='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-mkdir ~/.dotfiles
 git clone --bare git@github.com:amitc1612/dotfiles.git ~/.dotfiles
 dot config --local status.showUntrackedFiles no
 dot checkout
 ```
+> [!TIP]
+> If `dot checkout` complains about existing files (e.g. end-4's fastfetch config), back them up or remove them and run it again.
 
-### Hyprland installations:
+### Oh My ZSH:
+CachyOS ships with fish as the default shell, so install zsh and Oh My ZSH, then switch the default shell:
 ```bash
-yay -S --needed hyprland kitty sddm swaync xdg-desktop-portal-hyprland hyprpolkitagent qt5-wayland qt6-wayland noto-fonts waybar rofi hyprpaper hyprlock hypridle hyprshot ttf-jetbrains-mono-nerd ttf-font-awesome noto-fonts-emoji starship wl-clipboard python-pywal16 hyprpicker cliphist hyprsunset hyprsysteminfo dolphin kdeconnect hypr-kdeconnect-fix rose-pine-hyprcursor playerctl pavucontrol brightnessctl sddm-silent-theme waybar-module-music-git apple-fonts gwenview wev grim slurp awww waypaper gnome-themes-extra gnome-themes-extra-gtk2 adwaita-qt5 adwaita-qt6-git peaclock qt5-quickcontrols qt5-quickcontrols2 qt5-declarative qt5-graphicaleffects ttf-cascadia-code ttf-cascadia-code-nerd
+sudo pacman -S --needed zsh fzf bat starship
+RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+ZSH_CUSTOM=$HOME/.config/zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+
+chsh -s $(which zsh)
 ```
+Log out and back in for the shell change to take effect.
 
-### Enable services:
+### Replace SDDM theme:
 ```bash
-sudo systemctl enable --now sddm pipewire wireplumber pipewire-pulse bluetooth cronie
+paru -S pixie-sddm-git
 ```
-
-### Generate the initial `pywal` cache:
-```bash
-wal -i ~/walls/<your-wallpaper>
-```
-
-### Replace SDDM theme: `sudoedit /etc/sddm.conf`
-```bash
-[General]
-InputMethod=qtvirtualkeyboard
-GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/silent/components/,QT_IM_MODULE=qtvirtualkeyboard
-
+Then `sudoedit /etc/sddm.conf`:
+```ini
 [Theme]
-Current=silent
+Current=pixie
 ```
-
-### Replace GRUB theme:
-```bash
-git clone https://github.com/adnksharp/CyberGRUB-2077
-cd CyberGRUB-2077
-sudo $SHELL ./install.sh
-```
-
-### Cronjob for randomizing wallpaper every 30 minutes:
-```bash
-(crontab -l 2>/dev/null; echo "*/30 * * * * /home/$USER/.config/hypr/scripts/wallpaper.sh") | crontab -
-```
+> [!TIP]
+> Make sure `Current` matches the theme's folder name in `/usr/share/sddm/themes/`.
