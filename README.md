@@ -35,7 +35,9 @@ RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/o
 ZSH_CUSTOM=$HOME/.config/zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+# zsh-autocomplete: pin to a known-good commit (newer ones break)
+git clone https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+git -C $ZSH_CUSTOM/plugins/zsh-autocomplete checkout 20f6c34
 
 chsh -s $(which zsh)
 ```
