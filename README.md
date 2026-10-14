@@ -41,14 +41,20 @@ chsh -s $(which zsh)
 ```
 Log out and back in for the shell change to take effect.
 
-### Replace SDDM theme:
+### Replace SDDM theme ([pixie](https://github.com/xCaptaiN09/pixie-sddm)):
+> [!WARNING]
+> Don't use pixie's `install.sh`: it detected Qt wrong and installed the Qt5 version. CachyOS needs the Qt6 version (the `main` branch), so install it manually:
 ```bash
-paru -S pixie-sddm-git
+sudo pacman -S --needed qt6-declarative qt6-svg
+git clone -b main https://github.com/xCaptaiN09/pixie-sddm.git
+sudo cp -r pixie-sddm /usr/share/sddm/themes/pixie
 ```
 Then `sudoedit /etc/sddm.conf`:
 ```ini
 [Theme]
 Current=pixie
 ```
-> [!TIP]
-> Make sure `Current` matches the theme's folder name in `/usr/share/sddm/themes/`.
+Preview it without logging out:
+```bash
+sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/pixie
+```
