@@ -2,7 +2,7 @@
 ZSH_THEME="half-life"
 
 # pywal16
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # Auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -28,11 +28,11 @@ zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-	# git
+	git
 	archlinux
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	fast-syntax-highlighting 
+	# fast-syntax-highlighting 
 	zsh-autocomplete
 	aliases
 	alias-finder
@@ -45,7 +45,7 @@ plugins=(
 	tldr
 	themes
 	tailscale
-	z
+	# z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -63,4 +63,3 @@ zstyle ':omz:plugins:alias-finder' cheaper yes # disabled by default
 
 # Pokemon fastfetch
 # pokemon-colorscripts --no-title -rn arceus,articuno,azelf,celebi,cobalion,cresselia,darkrai,deoxys,dialga,diancie,entei,giratina,groudon,heatran,ho-oh,hoopa,jirachi,keldeo,kyogre,kyurem,landorus,latias,latios,lugia,manaphy,marshadow,meloetta,mew,mewtwo,moltres,mesprit,necrozma,palkia,phione,raikou,rayquaza,regice,regigigas,regirock,registeel,reshiram,shaymin,solgaleo,suicune,terrakion,thundurus,tornadus,uxie,victini,virizion,volcanion,xerneas,yveltal,zapdos,zekrom,zeraora,zygarde,snorlax,ditto,pikachu,charizard,drampa | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 2 --logo-width 1 --logo -
-fastfetch
